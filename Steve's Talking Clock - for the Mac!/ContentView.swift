@@ -5,7 +5,7 @@
 import SwiftUI
 import AVFoundation
 import AVKit
-import Combine // 1. Added this to fix the 'autoconnect' error
+import Combine
 
 struct ContentView: View {
     @AppStorage("mainVoice") private var mainVoice = "Default"
@@ -19,8 +19,8 @@ struct ContentView: View {
     @AppStorage("gapDuration") private var gapDuration: Double = 0.03
     
     @AppStorage("qEnable") private var qEnable = false
-    @AppStorage("qBefore") private var qBefore = "08:00 am"
-    @AppStorage("qAfter") private var qAfter = "12:00 am"
+    @AppStorage("qBefore") private var qBefore = "11:00 pm" // Stop speaking after
+    @AppStorage("qAfter") private var qAfter = "08:00 am"  // Start speaking from
     
     @AppStorage("hk_sayTime") private var hk_sayTime = "t"
     @AppStorage("hk_toggle24") private var hk_toggle24 = "h"
@@ -37,7 +37,6 @@ struct ContentView: View {
     @State private var engine = AVAudioEngine()
     @State private var sourceNode: AVAudioSourceNode?
     
-    // 2. Added the Timer and the memory variable here
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var lastAnnouncedMinute: Int = -1
 
@@ -69,36 +68,40 @@ struct ContentView: View {
             .frame(width: 200).padding(.trailing, 12)
 
             VStack(spacing: 20) {
-                Button("Say Time") { startSpeak(mainVoice) }
-                Button("Initialise") { refresh(); NSSound.beep() }
-                Button("Open Voices Folder") { revealVoicesFolder() }
-                Button("Save Settings") { NSSound.beep() }
+                Button("Say Time") {
+                    // Manual override: bypassQuietMode is true
+                    startSpeak(mainVoice, bypassQuietMode: true)
+                    }
+                    .keyboardShortcut("t", modifiers: [.option])
+                    .focusable(false)
+                
+                Button("Initialise") { refresh(); NSSound.beep() }.focusable(false)
+                Button("Open Voices Folder") { revealVoicesFolder() }.focusable(false)
+                Button("Save Settings") { NSSound.beep() }.focusable(false)
                 AirPlayView().frame(width: 120, height: 30)
-                Button("Hotkeys...") { activeSheet = .hotkeys }
-                Button("Quiet Mode...") { activeSheet = .quiet }
+                Button("Hotkeys...") { activeSheet = .hotkeys }.focusable(false)
+                Button("Quiet Mode...") { activeSheet = .quiet }.focusable(false)
                 Button("Minimise") { NSApp.hide(nil) }
+                    .keyboardShortcut("m", modifiers: [.option])
+                    .focusable(false)
             }
             .buttonStyle(.bordered).controlSize(.small).frame(width: 120)
         }
         .padding().frame(width: 350, height: 400)
         .onAppear { setupEngine(); refresh(); setupHotkeyMonitor() }
         .sheet(item: $activeSheet) { item in sheetView(for: item) }
-        // 3. This triggers the check every second
         .onReceive(timer) { _ in
             checkAutoAnnounce()
         }
     }
 
-    // MARK: - Automatic Announcement Logic
     func checkAutoAnnounce() {
         let components = Calendar.current.dateComponents([.minute], from: Date())
         guard let minute = components.minute else { return }
-
         let isQuarterHour = (minute == 0 || minute == 15 || minute == 30 || minute == 45)
         
         if isQuarterHour && minute != lastAnnouncedMinute {
             lastAnnouncedMinute = minute
-            
             var selectedVoice = "None"
             switch minute {
             case 0: selectedVoice = hourVoice
@@ -107,15 +110,14 @@ struct ContentView: View {
             case 45: selectedVoice = threeQuarterVoice
             default: break
             }
-            
             if selectedVoice == "None" { selectedVoice = mainVoice }
             if selectedVoice != "None" {
-                startSpeak(selectedVoice)
+                // Auto announcements respect Quiet Mode
+                startSpeak(selectedVoice, bypassQuietMode: false)
             }
         }
     }
 
-    // MARK: - Voice Discovery Logic
     func getExternalVoicesURL() -> URL {
         let paths = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
         let appSupportURL = paths[0].appendingPathComponent("StevesTalkingClock/Voices")
@@ -150,18 +152,19 @@ struct ContentView: View {
         self.voiceNames = names
     }
 
-    // MARK: - Audio Engine logic
     func setupEngine() { _ = engine.mainMixerNode; try? engine.start() }
 
-    func startSpeak(_ voice: String) {
-        if voice == "None" || checkQuietMode() { return }
+    // Logic updated to allow manual override
+    func startSpeak(_ voice: String, bypassQuietMode: Bool = false) {
+        if voice == "None" { return }
+        if !bypassQuietMode && checkQuietMode() { return }
+        
         let cal = Calendar.current
         let now = Date()
         var h = cal.component(.hour, from: now)
         let m = cal.component(.minute, from: now)
         let isPm = h >= 12
         if !hour24Mode { h = (h % 12 == 0) ? 12 : h % 12 }
-        
         var words = ["its.wav", "\(h).wav"]
         if m == 0 { words.append("oclock.wav") }
         else if m < 10 { words += ["o.wav", "\(m).wav"] }
@@ -170,7 +173,6 @@ struct ContentView: View {
             words.append("\((m/10)*10).wav"); if m % 10 > 0 { words.append("\(m%10).wav") }
         }
         if !hour24Mode { words.append(isPm ? "pm.wav" : "am.wav") }
-        
         playUsingSourceNode(files: words, voiceName: voice)
     }
 
@@ -180,7 +182,6 @@ struct ContentView: View {
         var allData: [Float] = []
         let gapSamples = Int(gapDuration * outputFormat.sampleRate)
         guard let voiceURL = voices[voiceName] else { return }
-
         for fileName in files {
             let fileURL = voiceURL.appendingPathComponent(fileName)
             guard let file = try? AVAudioFile(forReading: fileURL) else { continue }
@@ -213,13 +214,38 @@ struct ContentView: View {
         if let node = sourceNode { engine.attach(node); engine.connect(node, to: engine.mainMixerNode, format: outputFormat) }
     }
 
+    // Fixed comparison logic
     func checkQuietMode() -> Bool {
         guard qEnable else { return false }
+        
+        let calendar = Calendar.current
+        let now = Date()
+        
+        // Convert current time to total minutes
+        let currentHour = calendar.component(.hour, from: now)
+        let currentMin = calendar.component(.minute, from: now)
+        let nowMinutes = currentHour * 60 + currentMin
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        guard let now = formatter.date(from: formatter.string(from: Date())),
-              let before = formatter.date(from: qBefore), let after = formatter.date(from: qAfter) else { return false }
-        return after < before ? (now > after && now < before) : (now < before || now > after)
+        
+        // Helper to convert "hh:mm a" to total minutes from midnight
+        func timeToMinutes(_ timeStr: String) -> Int? {
+            guard let date = formatter.date(from: timeStr) else { return nil }
+            let h = calendar.component(.hour, from: date)
+            let m = calendar.component(.minute, from: date)
+            return h * 60 + m
+        }
+        
+        guard let stopMins = timeToMinutes(qBefore), let startMins = timeToMinutes(qAfter) else { return false }
+        
+        if stopMins < startMins {
+            // daytime quiet (e.g., 9am to 5pm)
+            return nowMinutes >= stopMins && nowMinutes < startMins
+        } else {
+            // overnight quiet (e.g., 11pm to 8am)
+            return nowMinutes >= stopMins || nowMinutes < startMins
+        }
     }
 
     func setupHotkeyMonitor() {
@@ -233,7 +259,8 @@ struct ContentView: View {
             let key = event.charactersIgnoringModifiers?.lowercased() ?? ""
             if event.modifierFlags.contains(.option) {
                 switch key {
-                case hk_sayTime: startSpeak(mainVoice); return nil
+                // Hotkeys also override Quiet Mode
+                case hk_sayTime: startSpeak(mainVoice, bypassQuietMode: true); return nil
                 case hk_toggle24: hour24Mode.toggle(); return nil
                 case hk_initialise: refresh(); return nil
                 case hk_audio: activeSheet = .audio; return nil
@@ -243,7 +270,6 @@ struct ContentView: View {
                 default: break
                 }
             }
-            if event.keyCode == 49 { startSpeak(mainVoice); return nil }
             return event
         }
     }
@@ -285,8 +311,14 @@ struct ContentView: View {
             } else if type == .quiet {
                 Text("Quiet Mode Settings").font(.headline)
                 Toggle("Enable Quiet Mode", isOn: $qEnable)
-                TextField("08:00 am", text: $qBefore).textFieldStyle(.roundedBorder)
-                TextField("12:00 am", text: $qAfter).textFieldStyle(.roundedBorder)
+                VStack(alignment: .leading) {
+                    Text("Stop speaking after:").font(.caption)
+                    TextField("11:00 pm", text: $qBefore).textFieldStyle(.roundedBorder)
+                }
+                VStack(alignment: .leading) {
+                    Text("Start speaking from:").font(.caption)
+                    TextField("08:00 am", text: $qAfter).textFieldStyle(.roundedBorder)
+                }
             }
             Button("OK") { activeSheet = nil }.buttonStyle(.borderedProminent)
         }.padding().frame(width: 350)
@@ -301,11 +333,11 @@ struct ContentView: View {
     }
 }
 
-// Keep this outside the main struct
 struct AirPlayView: NSViewRepresentable {
     func makeNSView(context: Context) -> AVRoutePickerView { AVRoutePickerView() }
     func updateNSView(_ nsView: AVRoutePickerView, context: Context) {}
 }
-    // Steve's Talking Clock
-    // Copyright © 2026 Oliver Fry.
-    // This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!
+
+// Steve's Talking Clock
+// Copyright © 2026 Oliver Fry.
+// This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!

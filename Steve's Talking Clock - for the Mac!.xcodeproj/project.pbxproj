@@ -38,7 +38,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		762D61A72F1BC3B100774CAC /* Exceptions for "Steve's Talking Clock - for the Mac!" folder in "Steve's Talking Clock" target */ = {
+		762F6B8B2F1BF77E0069397D /* Exceptions for "Steve's Talking Clock - for the Mac!" folder in "Steve's Talking Clock" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
@@ -53,7 +53,7 @@
 		76EFD4EE2F1ADCCB00C45C5C /* Steve's Talking Clock - for the Mac! */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				762D61A72F1BC3B100774CAC /* Exceptions for "Steve's Talking Clock - for the Mac!" folder in "Steve's Talking Clock" target */,
+				762F6B8B2F1BF77E0069397D /* Exceptions for "Steve's Talking Clock - for the Mac!" folder in "Steve's Talking Clock" target */,
 			);
 			path = "Steve's Talking Clock - for the Mac!";
 			sourceTree = "<group>";
