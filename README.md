@@ -1,5 +1,5 @@
 # Steve's Talking Clock for Mac
-**Version 2.06 — 17 January 2026** *Modified by Oliver Fry — Inspired by Stephen Clower*
+**Version 1.0 — 17 January 2026** *Modified by Oliver Fry — Inspired by Stephen Clower*
 
 This is the Mac version of Steve's Talking Clock, originally by Stephen Clower and ported/modified by Oliver Fry for macOS 12.0 Monterey and newer.
 
