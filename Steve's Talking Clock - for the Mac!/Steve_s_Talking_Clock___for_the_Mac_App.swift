@@ -10,7 +10,7 @@ struct StevesClockApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
-        // .regular allows the app to have a name in the menu bar and stay in the Dock
+        // Keeps the app visible in the Dock and Menu Bar
         NSApplication.shared.setActivationPolicy(.regular)
     }
     
@@ -18,7 +18,6 @@ struct StevesClockApp: App {
         WindowGroup(id: "main") {
             ContentView()
                 .onAppear {
-                    // This ensures the window is captured by the AppDelegate when it opens
                     appDelegate.setupWindowPersistence()
                 }
         }
@@ -26,7 +25,7 @@ struct StevesClockApp: App {
     }
 }
 
-// This helper allows us to use the feature only when it's available
+// Helper for window sizing compatibility
 extension Scene {
     func windowResizabilityContentSize() -> some Scene {
         if #available(macOS 13.0, *) {
@@ -41,11 +40,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     var statusBarItem: NSStatusItem?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Setup the Menu Bar / Status Bar Item
         statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusBarItem?.button {
             button.image = NSImage(systemSymbolName: "clock", accessibilityDescription: "Steve's Talking Clock")
             let menu = NSMenu()
-            menu.addItem(NSMenuItem(title: "Show Clock", action: #selector(toggleWindow), keyEquivalent: "s"))
+            
+            // "Show Clock" remains, but we use Command+S as a shortcut instead of space
+            let showItem = NSMenuItem(title: "Show Clock", action: #selector(toggleWindow), keyEquivalent: "s")
+            showItem.keyEquivalentModifierMask = [.command]
+            menu.addItem(showItem)
+            
             menu.addItem(NSMenuItem.separator())
             menu.addItem(NSMenuItem(title: "Quit", action: #selector(terminate), keyEquivalent: "q"))
             statusBarItem?.menu = menu
@@ -54,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSApp.activate(ignoringOtherApps: true)
     }
 
-    // This is the fix! It finds the window and tells it NOT to delete itself when closed
+    // Fix: Ensures the window is just hidden, not destroyed, when closed
     func setupWindowPersistence() {
         if let window = NSApp.windows.first(where: { $0.identifier?.rawValue == "main" || $0.canBecomeKey }) {
             window.isReleasedWhenClosed = false
@@ -64,10 +69,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     @objc func toggleWindow() {
         NSApp.activate(ignoringOtherApps: true)
-        // Look for the window again
-        if let window = NSApp.windows.first(where: { $0.canBecomeKey }) {
+        if let window = NSApp.windows.first {
             window.makeKeyAndOrderFront(nil)
-            window.setIsVisible(true) // Force it to be visible even if it was closed
+            window.setIsVisible(true)
         }
     }
     
@@ -75,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSApplication.shared.terminate(nil)
     }
     
-    // This tells macOS NOT to quit the app just because the window is gone
+    // Keeps the timer running even if the window is closed
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return false
     }
