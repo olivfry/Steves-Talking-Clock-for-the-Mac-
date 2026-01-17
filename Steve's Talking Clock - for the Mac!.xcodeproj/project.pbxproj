@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		762D61A92F1BC42300774CAC /* Default in Resources */ = {isa = PBXBuildFile; fileRef = 76EFD5602F1B079D00C45C5C /* Default */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		762D618B2F1BC17800774CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76EFD4E42F1ADCCA00C45C5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 762D61782F1BC17600774CAC;
+			remoteInfo = "Steve's Talking Clock";
+		};
+		762D61952F1BC17800774CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76EFD4E42F1ADCCA00C45C5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 762D61782F1BC17600774CAC;
+			remoteInfo = "Steve's Talking Clock";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		762D61792F1BC17600774CAC /* Steve's Talking Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Steve's Talking Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		762D618A2F1BC17800774CAC /* Steve's Talking ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Steve's Talking ClockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		762D61942F1BC17800774CAC /* Steve's Talking ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Steve's Talking ClockUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		762D61A52F1BC28100774CAC /* Steve-s-Talking-Clock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Steve-s-Talking-Clock-Info.plist"; sourceTree = "<group>"; };
+		76EFD4FE2F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Steve's Talking Clock - for the Mac!Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76EFD5082F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Steve's Talking Clock - for the Mac!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76EFD5602F1B079D00C45C5C /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		762D61A72F1BC3B100774CAC /* Exceptions for "Steve's Talking Clock - for the Mac!" folder in "Steve's Talking Clock" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				"Steve_s_Talking_Clock___for_the_Mac_App.swift",
+			);
+			target = 762D61782F1BC17600774CAC /* Steve's Talking Clock */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		76EFD4EE2F1ADCCB00C45C5C /* Steve's Talking Clock - for the Mac! */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				762D61A72F1BC3B100774CAC /* Exceptions for "Steve's Talking Clock - for the Mac!" folder in "Steve's Talking Clock" target */,
+			);
+			path = "Steve's Talking Clock - for the Mac!";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		762D61762F1BC17600774CAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762D61872F1BC17800774CAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762D61912F1BC17800774CAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76EFD4FB2F1ADCCF00C45C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76EFD5052F1ADCCF00C45C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76EFD4E32F1ADCCA00C45C5C = {
+			isa = PBXGroup;
+			children = (
+				762D61A52F1BC28100774CAC /* Steve-s-Talking-Clock-Info.plist */,
+				76EFD5602F1B079D00C45C5C /* Default */,
+				76EFD4EE2F1ADCCB00C45C5C /* Steve's Talking Clock - for the Mac! */,
+				76EFD4ED2F1ADCCB00C45C5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76EFD4ED2F1ADCCB00C45C5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76EFD4FE2F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!Tests.xctest */,
+				76EFD5082F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!UITests.xctest */,
+				762D61792F1BC17600774CAC /* Steve's Talking Clock.app */,
+				762D618A2F1BC17800774CAC /* Steve's Talking ClockTests.xctest */,
+				762D61942F1BC17800774CAC /* Steve's Talking ClockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		762D61782F1BC17600774CAC /* Steve's Talking Clock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762D619C2F1BC17800774CAC /* Build configuration list for PBXNativeTarget "Steve's Talking Clock" */;
+			buildPhases = (
+				762D61752F1BC17600774CAC /* Sources */,
+				762D61762F1BC17600774CAC /* Frameworks */,
+				762D61772F1BC17600774CAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Steve's Talking Clock";
+			packageProductDependencies = (
+			);
+			productName = "Steve's Talking Clock";
+			productReference = 762D61792F1BC17600774CAC /* Steve's Talking Clock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		762D61892F1BC17800774CAC /* Steve's Talking ClockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762D619F2F1BC17800774CAC /* Build configuration list for PBXNativeTarget "Steve's Talking ClockTests" */;
+			buildPhases = (
+				762D61862F1BC17800774CAC /* Sources */,
+				762D61872F1BC17800774CAC /* Frameworks */,
+				762D61882F1BC17800774CAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				762D618C2F1BC17800774CAC /* PBXTargetDependency */,
+			);
+			name = "Steve's Talking ClockTests";
+			packageProductDependencies = (
+			);
+			productName = "Steve's Talking ClockTests";
+			productReference = 762D618A2F1BC17800774CAC /* Steve's Talking ClockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		762D61932F1BC17800774CAC /* Steve's Talking ClockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762D61A22F1BC17800774CAC /* Build configuration list for PBXNativeTarget "Steve's Talking ClockUITests" */;
+			buildPhases = (
+				762D61902F1BC17800774CAC /* Sources */,
+				762D61912F1BC17800774CAC /* Frameworks */,
+				762D61922F1BC17800774CAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				762D61962F1BC17800774CAC /* PBXTargetDependency */,
+			);
+			name = "Steve's Talking ClockUITests";
+			packageProductDependencies = (
+			);
+			productName = "Steve's Talking ClockUITests";
+			productReference = 762D61942F1BC17800774CAC /* Steve's Talking ClockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		76EFD4FD2F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76EFD5152F1ADCCF00C45C5C /* Build configuration list for PBXNativeTarget "Steve's Talking Clock - for the Mac!Tests" */;
+			buildPhases = (
+				76EFD4FA2F1ADCCF00C45C5C /* Sources */,
+				76EFD4FB2F1ADCCF00C45C5C /* Frameworks */,
+				76EFD4FC2F1ADCCF00C45C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Steve's Talking Clock - for the Mac!Tests";
+			packageProductDependencies = (
+			);
+			productName = "Steve's Talking Clock - for the Mac!Tests";
+			productReference = 76EFD4FE2F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		76EFD5072F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76EFD5182F1ADCCF00C45C5C /* Build configuration list for PBXNativeTarget "Steve's Talking Clock - for the Mac!UITests" */;
+			buildPhases = (
+				76EFD5042F1ADCCF00C45C5C /* Sources */,
+				76EFD5052F1ADCCF00C45C5C /* Frameworks */,
+				76EFD5062F1ADCCF00C45C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Steve's Talking Clock - for the Mac!UITests";
+			packageProductDependencies = (
+			);
+			productName = "Steve's Talking Clock - for the Mac!UITests";
+			productReference = 76EFD5082F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76EFD4E42F1ADCCA00C45C5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					762D61782F1BC17600774CAC = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					762D61892F1BC17800774CAC = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 762D61782F1BC17600774CAC;
+					};
+					762D61932F1BC17800774CAC = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 762D61782F1BC17600774CAC;
+					};
+					76EFD4FD2F1ADCCF00C45C5C = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 76EFD4EB2F1ADCCA00C45C5C;
+					};
+					76EFD5072F1ADCCF00C45C5C = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 76EFD4EB2F1ADCCA00C45C5C;
+					};
+				};
+			};
+			buildConfigurationList = 76EFD4E72F1ADCCA00C45C5C /* Build configuration list for PBXProject "Steve's Talking Clock - for the Mac!" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76EFD4E32F1ADCCA00C45C5C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 76EFD4ED2F1ADCCB00C45C5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76EFD4FD2F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!Tests */,
+				76EFD5072F1ADCCF00C45C5C /* Steve's Talking Clock - for the Mac!UITests */,
+				762D61782F1BC17600774CAC /* Steve's Talking Clock */,
+				762D61892F1BC17800774CAC /* Steve's Talking ClockTests */,
+				762D61932F1BC17800774CAC /* Steve's Talking ClockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		762D61772F1BC17600774CAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762D61A92F1BC42300774CAC /* Default in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762D61882F1BC17800774CAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762D61922F1BC17800774CAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76EFD4FC2F1ADCCF00C45C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76EFD5062F1ADCCF00C45C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		762D61752F1BC17600774CAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762D61862F1BC17800774CAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762D61902F1BC17800774CAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76EFD4FA2F1ADCCF00C45C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76EFD5042F1ADCCF00C45C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		762D618C2F1BC17800774CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 762D61782F1BC17600774CAC /* Steve's Talking Clock */;
+			targetProxy = 762D618B2F1BC17800774CAC /* PBXContainerItemProxy */;
+		};
+		762D61962F1BC17800774CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 762D61782F1BC17600774CAC /* Steve's Talking Clock */;
+			targetProxy = 762D61952F1BC17800774CAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		762D619D2F1BC17800774CAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Steve-s-Talking-Clock-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Steve's Talking Clock";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-Clock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		762D619E2F1BC17800774CAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Steve-s-Talking-Clock-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Steve's Talking Clock";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-Clock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		762D61A02F1BC17800774CAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-ClockTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steve's Talking Clock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Steve's Talking Clock";
+			};
+			name = Debug;
+		};
+		762D61A12F1BC17800774CAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-ClockTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steve's Talking Clock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Steve's Talking Clock";
+			};
+			name = Release;
+		};
+		762D61A32F1BC17800774CAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-ClockUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Steve's Talking Clock";
+			};
+			name = Debug;
+		};
+		762D61A42F1BC17800774CAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-ClockUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Steve's Talking Clock";
+			};
+			name = Release;
+		};
+		76EFD5102F1ADCCF00C45C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F734UX9469;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		76EFD5112F1ADCCF00C45C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F734UX9469;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		76EFD5162F1ADCCF00C45C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-Clock---for-the-Mac-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steve's Talking Clock - for the Mac!.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Steve's Talking Clock - for the Mac!";
+			};
+			name = Debug;
+		};
+		76EFD5172F1ADCCF00C45C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-Clock---for-the-Mac-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steve's Talking Clock - for the Mac!.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Steve's Talking Clock - for the Mac!";
+			};
+			name = Release;
+		};
+		76EFD5192F1ADCCF00C45C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-Clock---for-the-Mac-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Steve's Talking Clock - for the Mac!";
+			};
+			name = Debug;
+		};
+		76EFD51A2F1ADCCF00C45C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F734UX9469;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eos.Steve-s-Talking-Clock---for-the-Mac-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Steve's Talking Clock - for the Mac!";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		762D619C2F1BC17800774CAC /* Build configuration list for PBXNativeTarget "Steve's Talking Clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762D619D2F1BC17800774CAC /* Debug */,
+				762D619E2F1BC17800774CAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		762D619F2F1BC17800774CAC /* Build configuration list for PBXNativeTarget "Steve's Talking ClockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762D61A02F1BC17800774CAC /* Debug */,
+				762D61A12F1BC17800774CAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		762D61A22F1BC17800774CAC /* Build configuration list for PBXNativeTarget "Steve's Talking ClockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762D61A32F1BC17800774CAC /* Debug */,
+				762D61A42F1BC17800774CAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76EFD4E72F1ADCCA00C45C5C /* Build configuration list for PBXProject "Steve's Talking Clock - for the Mac!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76EFD5102F1ADCCF00C45C5C /* Debug */,
+				76EFD5112F1ADCCF00C45C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76EFD5152F1ADCCF00C45C5C /* Build configuration list for PBXNativeTarget "Steve's Talking Clock - for the Mac!Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76EFD5162F1ADCCF00C45C5C /* Debug */,
+				76EFD5172F1ADCCF00C45C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76EFD5182F1ADCCF00C45C5C /* Build configuration list for PBXNativeTarget "Steve's Talking Clock - for the Mac!UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76EFD5192F1ADCCF00C45C5C /* Debug */,
+				76EFD51A2F1ADCCF00C45C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76EFD4E42F1ADCCA00C45C5C /* Project object */;
+}
