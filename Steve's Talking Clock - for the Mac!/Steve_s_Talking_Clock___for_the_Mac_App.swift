@@ -1,7 +1,9 @@
 // Steve's Talking Clock
 // Copyright © 2026 Oliver Fry.
 // This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!
+
 import SwiftUI
+import AppKit
 
 @main
 struct StevesClockApp: App {
@@ -15,8 +17,11 @@ struct StevesClockApp: App {
     var body: some Scene {
         WindowGroup(id: "main") {
             ContentView()
+                .onAppear {
+                    // This ensures the window is captured by the AppDelegate when it opens
+                    appDelegate.setupWindowPersistence()
+                }
         }
-        // This checks if the Mac running the app is on macOS 13 or newer
         .windowResizabilityContentSize()
     }
 }
@@ -32,7 +37,7 @@ extension Scene {
     }
 }
 
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     var statusBarItem: NSStatusItem?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -48,18 +53,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         NSApp.activate(ignoringOtherApps: true)
     }
-    
+
+    // This is the fix! It finds the window and tells it NOT to delete itself when closed
+    func setupWindowPersistence() {
+        if let window = NSApp.windows.first(where: { $0.identifier?.rawValue == "main" || $0.canBecomeKey }) {
+            window.isReleasedWhenClosed = false
+            window.delegate = self
+        }
+    }
+
     @objc func toggleWindow() {
         NSApp.activate(ignoringOtherApps: true)
+        // Look for the window again
         if let window = NSApp.windows.first(where: { $0.canBecomeKey }) {
             window.makeKeyAndOrderFront(nil)
+            window.setIsVisible(true) // Force it to be visible even if it was closed
         }
     }
     
     @objc func terminate() {
         NSApplication.shared.terminate(nil)
     }
+    
+    // This tells macOS NOT to quit the app just because the window is gone
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return false
+    }
 }
+
 // Steve's Talking Clock
 // Copyright © 2026 Oliver Fry.
 // This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!
