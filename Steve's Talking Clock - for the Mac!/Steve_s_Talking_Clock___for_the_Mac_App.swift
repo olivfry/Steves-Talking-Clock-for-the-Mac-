@@ -83,3 +83,4 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 }
 // Steve's Talking Clock
 // Copyright © 2026 Oliver Fry.
+// This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!

@@ -19,8 +19,8 @@ struct ContentView: View {
     @AppStorage("gapDuration") private var gapDuration: Double = 0.03
     
     @AppStorage("qEnable") private var qEnable = false
-    @AppStorage("qBefore") private var qBefore = "11:00 pm" // Stop speaking after
-    @AppStorage("qAfter") private var qAfter = "08:00 am"  // Start speaking from
+    @AppStorage("qBefore") private var qBefore = "11:00 pm"
+    @AppStorage("qAfter") private var qAfter = "08:00 am"
     
     @AppStorage("hk_sayTime") private var hk_sayTime = "t"
     @AppStorage("hk_toggle24") private var hk_toggle24 = "h"
@@ -69,7 +69,6 @@ struct ContentView: View {
 
             VStack(spacing: 20) {
                 Button("Say Time") {
-                    // Manual override: bypassQuietMode is true
                     startSpeak(mainVoice, bypassQuietMode: true)
                     }
                     .keyboardShortcut("t", modifiers: [.option])
@@ -98,6 +97,7 @@ struct ContentView: View {
     func checkAutoAnnounce() {
         let components = Calendar.current.dateComponents([.minute], from: Date())
         guard let minute = components.minute else { return }
+        
         let isQuarterHour = (minute == 0 || minute == 15 || minute == 30 || minute == 45)
         
         if isQuarterHour && minute != lastAnnouncedMinute {
@@ -112,7 +112,6 @@ struct ContentView: View {
             }
             if selectedVoice == "None" { selectedVoice = mainVoice }
             if selectedVoice != "None" {
-                // Auto announcements respect Quiet Mode
                 startSpeak(selectedVoice, bypassQuietMode: false)
             }
         }
@@ -154,7 +153,6 @@ struct ContentView: View {
 
     func setupEngine() { _ = engine.mainMixerNode; try? engine.start() }
 
-    // Logic updated to allow manual override
     func startSpeak(_ voice: String, bypassQuietMode: Bool = false) {
         if voice == "None" { return }
         if !bypassQuietMode && checkQuietMode() { return }
@@ -165,13 +163,21 @@ struct ContentView: View {
         let m = cal.component(.minute, from: now)
         let isPm = h >= 12
         if !hour24Mode { h = (h % 12 == 0) ? 12 : h % 12 }
+        
         var words = ["its.wav", "\(h).wav"]
-        if m == 0 { words.append("oclock.wav") }
-        else if m < 10 { words += ["o.wav", "\(m).wav"] }
-        else if m < 20 { words.append("\(m).wav") }
-        else {
-            words.append("\((m/10)*10).wav"); if m % 10 > 0 { words.append("\(m%10).wav") }
+        
+        // BUG FIX: Changed "oclock.wav" to "00.wav"
+        if m == 0 {
+            words.append("00.wav")
+        } else if m < 10 {
+            words += ["o.wav", "\(m).wav"]
+        } else if m < 20 {
+            words.append("\(m).wav")
+        } else {
+            words.append("\((m/10)*10).wav")
+            if m % 10 > 0 { words.append("\(m%10).wav") }
         }
+        
         if !hour24Mode { words.append(isPm ? "pm.wav" : "am.wav") }
         playUsingSourceNode(files: words, voiceName: voice)
     }
@@ -214,14 +220,10 @@ struct ContentView: View {
         if let node = sourceNode { engine.attach(node); engine.connect(node, to: engine.mainMixerNode, format: outputFormat) }
     }
 
-    // Fixed comparison logic
     func checkQuietMode() -> Bool {
         guard qEnable else { return false }
-        
         let calendar = Calendar.current
         let now = Date()
-        
-        // Convert current time to total minutes
         let currentHour = calendar.component(.hour, from: now)
         let currentMin = calendar.component(.minute, from: now)
         let nowMinutes = currentHour * 60 + currentMin
@@ -229,7 +231,6 @@ struct ContentView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
         
-        // Helper to convert "hh:mm a" to total minutes from midnight
         func timeToMinutes(_ timeStr: String) -> Int? {
             guard let date = formatter.date(from: timeStr) else { return nil }
             let h = calendar.component(.hour, from: date)
@@ -240,10 +241,8 @@ struct ContentView: View {
         guard let stopMins = timeToMinutes(qBefore), let startMins = timeToMinutes(qAfter) else { return false }
         
         if stopMins < startMins {
-            // daytime quiet (e.g., 9am to 5pm)
             return nowMinutes >= stopMins && nowMinutes < startMins
         } else {
-            // overnight quiet (e.g., 11pm to 8am)
             return nowMinutes >= stopMins || nowMinutes < startMins
         }
     }
@@ -259,7 +258,6 @@ struct ContentView: View {
             let key = event.charactersIgnoringModifiers?.lowercased() ?? ""
             if event.modifierFlags.contains(.option) {
                 switch key {
-                // Hotkeys also override Quiet Mode
                 case hk_sayTime: startSpeak(mainVoice, bypassQuietMode: true); return nil
                 case hk_toggle24: hour24Mode.toggle(); return nil
                 case hk_initialise: refresh(); return nil
