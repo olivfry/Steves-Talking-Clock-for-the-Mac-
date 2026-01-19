@@ -70,9 +70,9 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 Button("Say Time") {
                     startSpeak(mainVoice, bypassQuietMode: true)
-                    }
-                    .keyboardShortcut("t", modifiers: [.option])
-                    .focusable(false)
+                }
+                .keyboardShortcut("t", modifiers: [.option])
+                .focusable(false)
                 
                 Button("Initialise") { refresh(); NSSound.beep() }.focusable(false)
                 Button("Open Voices Folder") { revealVoicesFolder() }.focusable(false)
@@ -94,12 +94,68 @@ struct ContentView: View {
         }
     }
 
+    // MARK: - Method Detection
+    func detectMethod(in voiceURL: URL) -> Int {
+        let fm = FileManager.default
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("cuckoo.wav").path) { return 7 }
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("chime.wav").path) { return 6 }
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("hour01.wav").path) { return 8 }
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("59.wav").path) { return 4 }
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("and.wav").path) { return 10 }
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("1a.wav").path) { return 5 }
+        if fm.fileExists(atPath: voiceURL.appendingPathComponent("thir.wav").path) { return 2 }
+        return 1
+    }
+
+    // MARK: - Multi-Method Speaking Logic
+    func startSpeak(_ voice: String, bypassQuietMode: Bool = false) {
+        if voice == "None" { return }
+        if !bypassQuietMode && checkQuietMode() { return }
+        guard let voiceURL = voices[voice] else { return }
+        
+        let method = detectMethod(in: voiceURL)
+        let cal = Calendar.current
+        let now = Date()
+        var h = cal.component(.hour, from: now)
+        let m = cal.component(.minute, from: now)
+        let isPm = h >= 12
+        
+        // Force 12-hour for methods 6, 7, and 8
+        let use24 = (method == 6 || method == 7 || method == 8) ? false : hour24Mode
+        if !use24 { h = (h % 12 == 0) ? 12 : h % 12 }
+        
+        var words: [String] = ["its.wav"]
+        
+        switch method {
+        case 4: // Method 4: Huge
+            words += ["\(h).wav", m == 0 ? "00.wav" : "\(m).wav"]
+        case 6: // Method 6: Big Ben
+            if m == 0 { words = ["00.wav"]; for _ in 0..<h { words.append("chime.wav") } }
+            else { words = ["\(m).wav"] }
+        case 7: // Method 7: Cuckoo
+            words = []; for _ in 0..<h { words.append("cuckoo.wav") }
+        case 8: // Method 8: Hourly
+            words = [String(format: "hour%02d.wav", h)]
+        default: // Default Method 1 style
+            words += ["\(h).wav"]
+            if m == 0 { words.append("00.wav") }
+            else if m < 10 { words += ["o.wav", "\(m).wav"] }
+            else if m < 20 { words.append("\(m).wav") }
+            else {
+                words.append("\((m/10)*10).wav")
+                if m % 10 > 0 { words.append("\(m%10).wav") }
+            }
+        }
+        
+        if !use24 && method < 6 { words.append(isPm ? "PM.wav" : "AM.wav") }
+        playUsingSourceNode(files: words, voiceName: voice)
+    }
+
+    // MARK: - Existing Helpers
     func checkAutoAnnounce() {
         let components = Calendar.current.dateComponents([.minute], from: Date())
         guard let minute = components.minute else { return }
-        
         let isQuarterHour = (minute == 0 || minute == 15 || minute == 30 || minute == 45)
-        
         if isQuarterHour && minute != lastAnnouncedMinute {
             lastAnnouncedMinute = minute
             var selectedVoice = "None"
@@ -111,9 +167,7 @@ struct ContentView: View {
             default: break
             }
             if selectedVoice == "None" { selectedVoice = mainVoice }
-            if selectedVoice != "None" {
-                startSpeak(selectedVoice, bypassQuietMode: false)
-            }
+            if selectedVoice != "None" { startSpeak(selectedVoice, bypassQuietMode: false) }
         }
     }
 
@@ -152,35 +206,6 @@ struct ContentView: View {
     }
 
     func setupEngine() { _ = engine.mainMixerNode; try? engine.start() }
-
-    func startSpeak(_ voice: String, bypassQuietMode: Bool = false) {
-        if voice == "None" { return }
-        if !bypassQuietMode && checkQuietMode() { return }
-        
-        let cal = Calendar.current
-        let now = Date()
-        var h = cal.component(.hour, from: now)
-        let m = cal.component(.minute, from: now)
-        let isPm = h >= 12
-        if !hour24Mode { h = (h % 12 == 0) ? 12 : h % 12 }
-        
-        var words = ["its.wav", "\(h).wav"]
-        
-        // BUG FIX: Changed "oclock.wav" to "00.wav"
-        if m == 0 {
-            words.append("00.wav")
-        } else if m < 10 {
-            words += ["o.wav", "\(m).wav"]
-        } else if m < 20 {
-            words.append("\(m).wav")
-        } else {
-            words.append("\((m/10)*10).wav")
-            if m % 10 > 0 { words.append("\(m%10).wav") }
-        }
-        
-        if !hour24Mode { words.append(isPm ? "pm.wav" : "am.wav") }
-        playUsingSourceNode(files: words, voiceName: voice)
-    }
 
     func playUsingSourceNode(files: [String], voiceName: String) {
         if let oldNode = sourceNode { engine.detach(oldNode) }
@@ -224,27 +249,20 @@ struct ContentView: View {
         guard qEnable else { return false }
         let calendar = Calendar.current
         let now = Date()
-        let currentHour = calendar.component(.hour, from: now)
-        let currentMin = calendar.component(.minute, from: now)
-        let nowMinutes = currentHour * 60 + currentMin
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm a"
-        
+        let nowMinutes = calendar.component(.hour, from: now) * 60 + calendar.component(.minute, from: now)
         func timeToMinutes(_ timeStr: String) -> Int? {
-            guard let date = formatter.date(from: timeStr) else { return nil }
-            let h = calendar.component(.hour, from: date)
-            let m = calendar.component(.minute, from: date)
-            return h * 60 + m
+            let formatter = DateFormatter()
+            formatter.dateFormat = "hh:mm a"
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            if let date = formatter.date(from: timeStr.lowercased().trimmingCharacters(in: .whitespaces)) {
+                return calendar.component(.hour, from: date) * 60 + calendar.component(.minute, from: date)
+            }
+            return nil
         }
-        
-        guard let stopMins = timeToMinutes(qBefore), let startMins = timeToMinutes(qAfter) else { return false }
-        
-        if stopMins < startMins {
-            return nowMinutes >= stopMins && nowMinutes < startMins
-        } else {
-            return nowMinutes >= stopMins || nowMinutes < startMins
-        }
+        let stopMins = timeToMinutes(qBefore) ?? 1380
+        let startMins = timeToMinutes(qAfter) ?? 360
+        if stopMins > startMins { return nowMinutes >= stopMins || nowMinutes < startMins }
+        else { return nowMinutes >= stopMins && nowMinutes < startMins }
     }
 
     func setupHotkeyMonitor() {

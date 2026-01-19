@@ -1,0 +1,367 @@
+This file contains a listing of all the files required for every concatenation method for the clock. Files with an asterisk (*) next to them are optional, but any other files are mandatory. When necessary, there will be comments beside a wave file whose function must be explained. The program scans for certain files to identify the type of concatenation being used, so please do not drop your new voice into the clock's folder until all files have been created. Note: because scrolling through this document could become tedious, each new method has three plus signs (+++) preceeding it.
+
++++ Method 1 - Simple Method
+0.wav
+o.wav - Says "o"
+00.wav - says "o'clock"
+1.wav
+2.wav
+3.wav
+4.wav
+5.wav
+6.wav
+7.wav
+8.wav
+9.wav
+10.wav
+11.wav
+12.wav
+13.wav
+14.wav
+15.wav
+16.wav
+17.wav
+18.wav
+19.wav
+20.wav
+30.wav
+40.wav
+50.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
+
++++ Method 2 - Traditional Talking Clock. Note: check the spelling of these files!
+0.wav
+o.wav - Says "o"
+00.wav - says "O'clock"
+1.wav
+2.wav
+3.wav
+4.wav
+5.wav
+6.wav
+7.wav
+8.wav
+9.wav
+10.wav
+11.wav
+12.wav
+thir.wav
+for.wav
+fif.wav
+six.wav
+seven.wav
+eight.wav
+nine.wav
+teen.wav
+twen.wav
+ty.wav
+ty1.wav
+ty2.wav
+ty3.wav
+ty4.wav
+ty5.wav
+ty6.wav
+ty7.wav
+ty8.wav
+ty9.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
+
+
++++ Method 3 - Digits Only
+0.wav
+o.wav - Says "o"
+00.wav - says "O'clock"
+1.wav
+2.wav
+3.wav
+4.wav
+5.wav
+6.wav
+7.wav
+8.wav
+9.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
+
++++ Method 4 - Really Huge! Good for foreign languages and most natural sounding
+0.wav
+o.wav - Says "o"
+00.wav - says "o'clock"
+1.wav
+2.wav
+3.wav
+4.wav
+5.wav
+6.wav
+7.wav
+8.wav
+9.wav
+10.wav
+11.wav
+12.wav
+13.wav
+14.wav
+15.wav
+16.wav
+17.wav
+18.wav
+19.wav
+20.wav
+21.wav
+22.wav
+23.wav
+24.wav
+25.wav
+26.wav
+27.wav
+28.wav
+29.wav
+30.wav
+31.wav
+32.wav
+33.wav
+34.wav
+35.wav
+36.wav
+37.wav
+38.wav
+39.wav
+40.wav
+41.wav
+42.wav
+43.wav
+44.wav
+45.wav
+46.wav
+47.wav
+48.wav
+49.wav
+50.wav
+51.wav
+52.wav
+53.wav
+54.wav
+55.wav
+56.wav
+57.wav
+58.wav
+59.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
+
++++ Method 5 - More natural sounding talking clock. Note: files with an a next to the numbers are played for the minute announcement only. E.G. 12.wav will say the hour 12 whereas 12a.wav will say the minute 12.
+0.wav
+o.wav - Says "o"
+00.wav - says "O'clock"
+1.wav
+1a.wav
+2.wav
+2a.wav
+3.wav
+3a.wav
+4.wav
+4a.wav
+5.wav
+5a.wav
+6.wav
+6a.wav
+7.wav
+7a.wav
+8.wav
+8a.wav
+9.wav
+9a.wav
+10.wav
+10a.wav
+11.wav
+11a.wav
+12.wav
+12a.wav
+thir.wav
+for.wav
+fif.wav
+six.wav
+seven.wav
+eight.wav
+nine.wav
+teen.wav
+twen.wav
+ty.wav
+ty1.wav
+ty2.wav
+ty3.wav
+ty4.wav
+ty5.wav
+ty6.wav
+ty7.wav
+ty8.wav
+ty9.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
+
++++ Method 6 - Big Ben. Note: this clock will function in 12-hour mode regardless of the 24-hour checkbox.
+00.wav - Plays the entire Big Ben song
+15.wav - Plays the quarter-hour Big Ben song
+30.wav - Plays the half-hour Big Ben song
+45.wav - Plays the three-quarters Big Ben song
+chime.wav - Big Ben chime
+
++++ Method 7 - Cuckoo clock. Note: this clock will function in 12-hour mode regardless of the 24-hour checkbox.
+cuckoo.wav - Contains the cuckoo sound
+
++++ Method 8 - Hourly clock. This method only sounds at the top of the hour with a different sound depending on the time. Note: this clock will function in 12-hour mode regardless of the 24-hour checkbox.
+hour01.wav
+hour02.wav
+hour03.wav
+hour04.wav
+hour05.wav
+hour06.wav
+hour07.wav
+hour08.wav
+hour09.wav
+hour10.wav
+hour11.wav
+hour12.wav
+
++++ Method 9 - Not So Traditional Talking Clock. Identical to Method 2 except that different number recordings are played for the hour and minute. Hour recordings are numbered as usual, and minute recordings are proceeded by an "a."
+0.wav
+o.wav - Says "o"
+00.wav - says "O'clock"
+1.wav
+1a.wav
+2.wav
+2a.wav
+3.wav
+3a.wav
+4.wav
+4a.wav
+5.wav
+5a.wav
+6.wav
+6a.wav
+7.wav
+7a.wav
+8.wav
+8a.wav
+9.wav
+9a.wav
+10.wav
+10a.wav
+11.wav
+11a.wav
+12.wav
+12a.wav
+thir.wav
+for.wav
+fif.wav
+six.wav
+seven.wav
+eight.wav
+nine.wav
+teen.wav
+teena.wav
+twen.wav
+ty.wav
+tya.wav
+ty1.wav
+ty1a.wav
+ty2.wav
+ty2a.wav
+ty3.wav
+ty3a.wav
+ty4.wav
+ty4a.wav
+ty5.wav
+ty5a.wav
+ty6.wav
+ty6a.wav
+ty7.wav
+ty7a.wav
+ty8.wav
+ty8a.wav
+ty9.wav
+ty9a.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
+
++++ Method 10 - Danish. Unlike English, numbers like twenty-one are spoken as "one and twenty."
+0.wav
+o.wav - Says "o"
+00.wav - says "o'clock"
+1.wav
+2.wav
+3.wav
+4.wav
+5.wav
+6.wav
+7.wav
+8.wav
+9.wav
+10.wav
+11.wav
+12.wav
+13.wav
+14.wav
+15.wav
+16.wav
+17.wav
+18.wav
+19.wav
+20.wav
+30.wav
+40.wav
+50.wav
+and.wav
+its.wav
+AM.wav
+PM.wav
+h.wav* - Played after the hour of the time has been spoken, says "hours"
+m.wav* - Played after the minute of the time has been spoken, says "minutes"
+announcement.wav* - Sound played prior to a 15, 30, 45, or alarm announcement
+hour1.wav* - Sound played prior to the hour announcement
+hour2.wav* - Sound played after the hour announcement is complete
+alarm.wav* - Sound played after the alarm time has been announced
