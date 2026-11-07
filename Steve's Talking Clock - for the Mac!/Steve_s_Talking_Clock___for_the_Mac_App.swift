@@ -1,86 +1,73 @@
-// Steve's Talking Clock
+// Steve's Talking Clock for the Mac
 // Copyright © 2026 Oliver Fry.
-// This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!
+// MIT licensed — see LICENSE for details.
+
 import SwiftUI
+import AppKit
 
 @main
 struct StevesClockApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
-    init() {
-        // .regular allows the app to have a name in the menu bar and stay in the Dock
-        NSApplication.shared.setActivationPolicy(.regular)
-    }
-    
+
     var body: some Scene {
         WindowGroup(id: "main") {
             ContentView()
-                .onAppear {
-                    appDelegate.setupWindowPersistence()
-                }
+                .onAppear { appDelegate.setupWindowPersistence() }
         }
-        // This checks if the Mac running the app is on macOS 13 or newer
-        .windowResizabilityContentSize()
-    }
-}
 
-// This helper allows us to use the feature only when it's available
-extension Scene {
-    func windowResizabilityContentSize() -> some Scene {
-        if #available(macOS 13.0, *) {
-            return self.windowResizability(.contentSize)
-        } else {
-            return self
+        Settings {
+            SettingsView()
         }
     }
 }
 
-class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     var statusBarItem: NSStatusItem?
-    
+
     func applicationDidFinishLaunching(_ notification: Notification) {
+        NSApplication.shared.setActivationPolicy(.regular)
+
         statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusBarItem?.button {
-            button.image = NSImage(systemSymbolName: "clock", accessibilityDescription: "Steve's Talking Clock")
+            button.image = NSImage(systemSymbolName: "clock",
+                                   accessibilityDescription: "Steve's Talking Clock")
             let menu = NSMenu()
-            // Updated to Alt (Option) + S
-            let showItem = NSMenuItem(title: "Show Clock", action: #selector(toggleWindow), keyEquivalent: "s")
+            let showItem = NSMenuItem(title: "Show Clock",
+                                      action: #selector(toggleWindow),
+                                      keyEquivalent: "s")
             showItem.keyEquivalentModifierMask = [.option]
             menu.addItem(showItem)
-            
             menu.addItem(NSMenuItem.separator())
-            menu.addItem(NSMenuItem(title: "Quit", action: #selector(terminate), keyEquivalent: "q"))
+            menu.addItem(NSMenuItem(title: "Quit",
+                                    action: #selector(terminate),
+                                    keyEquivalent: "q"))
             statusBarItem?.menu = menu
         }
-        
+
         NSApp.activate(ignoringOtherApps: true)
     }
-    
+
     func setupWindowPersistence() {
-        if let window = NSApp.windows.first(where: { $0.canBecomeKey }) {
+        if let window = mainWindow() {
             window.isReleasedWhenClosed = false
             window.delegate = self
-            // Fix: Prevents Space bar from acting as a "click" on the default button
-            window.defaultButtonCell = nil
         }
+    }
+
+    private func mainWindow() -> NSWindow? {
+        NSApp.windows.first { $0.identifier?.rawValue == "main" }
+            ?? NSApp.windows.first { $0.canBecomeKey }
     }
 
     @objc func toggleWindow() {
         NSApp.activate(ignoringOtherApps: true)
-        if let window = NSApp.windows.first {
+        if let window = mainWindow() {
             window.makeKeyAndOrderFront(nil)
             window.setIsVisible(true)
         }
     }
-    
-    @objc func terminate() {
-        NSApplication.shared.terminate(nil)
-    }
-    
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return false
-    }
+
+    @objc func terminate() { NSApplication.shared.terminate(nil) }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
 }
-// Steve's Talking Clock
-// Copyright © 2026 Oliver Fry.
-// This code is using the MIT license. This means you can freely use, copy, modify, merge, publish, distribute, sublicense, and even sell the code, even in commercial, closed-source projects, as long as you include the original copyright notice and license text in all copies or substantial portions of the software, otherwise you may receive a DMCA copyright takedown request. Thank you!

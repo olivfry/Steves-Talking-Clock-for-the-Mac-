@@ -1,0 +1,26 @@
+{
+  "" : {
+    "const-values" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary.swiftconstvalues",
+    "dependencies" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary.d",
+    "diagnostics" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary.dia",
+    "emit-module-dependencies" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary-emit-module.dia",
+    "pch" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve's Talking Clock-primary.swiftdeps"
+  },
+  "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/Steve's Talking Clock - for the Mac!/ContentView.swift" : {
+    "index-unit-output-path" : "/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/Steve's Talking Clock - for the Mac!/Steve_s_Talking_Clock___for_the_Mac_App.swift" : {
+    "index-unit-output-path" : "/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve_s_Talking_Clock___for_the_Mac_App.o",
+    "llvm-bc" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve_s_Talking_Clock___for_the_Mac_App.bc",
+    "object" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/Steve_s_Talking_Clock___for_the_Mac_App.o"
+  },
+  "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/Steve's Talking Clock - for the Mac!.build/Release/Steve's Talking Clock.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

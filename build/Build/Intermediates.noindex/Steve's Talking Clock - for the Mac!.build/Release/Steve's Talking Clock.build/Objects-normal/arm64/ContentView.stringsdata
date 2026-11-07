@@ -1,0 +1,456 @@
+{
+  "source": "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/Steve's Talking Clock - for the Mac!/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Voice settings",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 107
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clock controls",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "24 Hour Mode",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 98
+        }
+      },
+      {
+        "comment": "",
+        "key": "24 hour mode",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "Announces the time in 24 hour format.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 102
+        }
+      },
+      {
+        "comment": "",
+        "key": "Gap Delay: %@s",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "Gap delay",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 85
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delay inserted between each spoken word.",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 87
+        }
+      },
+      {
+        "comment": "",
+        "key": "hh:mm am",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alarm time",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 95
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter hh:mm am or pm, or hh:mm for 24-hour time.",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 96
+        }
+      },
+      {
+        "comment": "",
+        "key": "Say Time",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "Speaks the current time using the main voice. Option T.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initialise",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 115
+        }
+      },
+      {
+        "comment": "",
+        "key": "Rescans the voices folder and refreshes the voice lists. Option I.",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 122
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open Voices Folder",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 124
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reveals the folder where voice packs are stored in Finder.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save Settings",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "Settings save automatically. This button is retained for compatibility.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "Audio...",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose the sound device used for announcements. Option U.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hotkeys…",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Opens the hotkey configuration dialog. Option K.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 138
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quiet Mode…",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 140
+        }
+      },
+      {
+        "comment": "",
+        "key": "Opens the quiet mode configuration dialog. Option Q.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 142
+        }
+      },
+      {
+        "comment": "",
+        "key": "Minimise",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hides the window. The clock keeps running. Option M.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 147
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 1100
+        }
+      },
+      {
+        "comment": "",
+        "key": "Chooses the voice used for %@.",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 1108
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hotkey Configuration",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 1117
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quiet Mode Settings",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 1129
+        }
+      },
+      {
+        "comment": "",
+        "key": "Audio Output",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 1148
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose the sound device used for clock announcements.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 1149
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enable Quiet Mode",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 1130
+        }
+      },
+      {
+        "comment": "",
+        "key": "Suppresses automatic announcements during the quiet window.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 1131
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sound device",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 1154
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sound device",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 1161
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select the output device for clock announcements.",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 1162
+        }
+      },
+      {
+        "comment": "",
+        "key": "Stop speaking after:",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 1133
+        }
+      },
+      {
+        "comment": "",
+        "key": "11:00 pm",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 1134
+        }
+      },
+      {
+        "comment": "",
+        "key": "Stop speaking after",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 1136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter hh:mm am or pm, or hh:mm for 24-hour time.",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 1137
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start speaking from:",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 1140
+        }
+      },
+      {
+        "comment": "",
+        "key": "08:00 am",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 1141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start speaking from",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 1143
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter hh:mm am or pm, or hh:mm for 24-hour time.",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 1144
+        }
+      },
+      {
+        "comment": "",
+        "key": "System Default",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 1155
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 1167
+        }
+      },
+      {
+        "comment": "",
+        "key": "Apply",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 1170
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 1170
+        }
+      },
+      {
+        "comment": "",
+        "key": "Press Key…",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 1185
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alt + %@",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 1185
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hotkey for %@",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 1190
+        }
+      },
+      {
+        "comment": "",
+        "key": "Recording",
+        "location": {
+          "startingColumn": 60,
+          "startingLine": 1191
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alt %@",
+        "location": {
+          "startingColumn": 74,
+          "startingLine": 1191
+        }
+      },
+      {
+        "comment": "",
+        "key": "Press to record a new keyboard shortcut.",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 1192
+        }
+      }
+    ]
+  },
+  "version": 1
+}

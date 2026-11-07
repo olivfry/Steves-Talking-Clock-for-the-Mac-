@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'Steve's Talking Clock' in project 'Steve's Talking Clock - for the Mac!' (no dependencies)

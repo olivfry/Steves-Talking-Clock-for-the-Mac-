@@ -1,0 +1,69 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "a3954fbaa98274e8b7cecd28c17dc171445511e214d0548cf8711f97a1aa9fc4"
+    }
+  ],
+  "containerPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/Steve's Talking Clock - for the Mac!.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "hostTargetedPlatform" : null,
+      "platform" : "macosx",
+      "sdk" : "macosx26.5",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Products",
+      "derivedDataPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build",
+      "indexDataStoreFolderPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "CLANG_COVERAGE_MAPPING" : "YES",
+          "CLANG_PROFILE_DATA_DIRECTORY" : "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/build/Build/ProfileData",
+          "COLOR_DIAGNOSTICS" : "YES",
+          "diagnostic_message_length" : "80",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

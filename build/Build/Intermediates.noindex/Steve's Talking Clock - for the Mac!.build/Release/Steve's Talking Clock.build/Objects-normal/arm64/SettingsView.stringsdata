@@ -1,0 +1,96 @@
+{
+  "source": "/Users/oliverfry/Desktop/Steves-Talking-Clock-for-the-Mac-/Steve's Talking Clock - for the Mac!/SettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Updates",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 12
+        }
+      },
+      {
+        "comment": "",
+        "key": "Startup",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "First-Run Experience",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Check for updates automatically",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 13
+        }
+      },
+      {
+        "comment": "",
+        "key": "Checks GitHub for a newer version when the app launches.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 14
+        }
+      },
+      {
+        "comment": "",
+        "key": "Check for Updates Now…",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "Launch at login",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "macOS needs your approval to add this app as a login item.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open Login Items Settings",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show Welcome Prompt Again",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 50
+        }
+      },
+      {
+        "comment": "",
+        "key": "Resets the first-run flag. The welcome prompt appears on the next launch from /Applications.",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 70
+        }
+      }
+    ]
+  },
+  "version": 1
+}
