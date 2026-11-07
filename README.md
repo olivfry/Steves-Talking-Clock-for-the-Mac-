@@ -1,7 +1,5 @@
 # Steve's Talking Clock for the Mac
 
-PLEASE NOTE: THIS PROJECT WAS GENERATED WITH THE HELP OF ARTIFICIAL INTELLIGENCE (DEEPSEEK OR DSEEK).
-
 A customisable talking clock for macOS. Announces the time on the quarter-hour,
 half-hour, three-quarter-hour, and top of the hour; supports per-slot voices,
 an alarm, quiet mode, configurable hotkeys and full VoiceOver accessibility.
